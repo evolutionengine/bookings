@@ -1,0 +1,21 @@
+{{template "base" .}}
+
+{{define "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>About Octallium</h1>
+                <p>Something more about Octallium and more</p>
+                <p>Data from template {{index .StringMap "test"}}</p>
+
+                <p>
+                    {{if ne (index .StringMap "remoteIP") ""}}
+                    Your remote IP address: {{index .StringMap "remoteIP"}}
+                    {{else}}
+                    I don't know your IP address, visit <a href="/">Home</a> so that I can set it.
+                    {{end}}
+                </p>
+            </div>
+        </div>
+    </div>    
+{{end}}
